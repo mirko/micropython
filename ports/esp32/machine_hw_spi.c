@@ -274,9 +274,9 @@ STATIC void machine_hw_spi_transfer(mp_obj_base_t *self_in, size_t len, const ui
 
             if (dest != NULL) {
                 memcpy(dest, &transaction.rx_data, bytesPerChunk);
+                dest += bytesPerChunk;
             }
             src += bytesPerChunk;
-            dest += bytesPerChunk;
             len -= bytesPerChunk;
         } else {
             if (wholeBytes) {
